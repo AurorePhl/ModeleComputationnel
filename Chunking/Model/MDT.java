@@ -58,5 +58,6 @@ public class MDT {
  * MDT(); System.out.println( mdt1.encode("as-pi-ra-teur-ca-me-le-on")+
  * mdt1.mct.getOrdre().toString());
  * System.out.println(mdt2.encode("pi-as-ra-teur-ca-on-le-me")+mdt2.mct.getOrdre
- * ().toString()); } }
+ * ().toString()); }
  */
+}
