@@ -57,15 +57,15 @@ public class MLT {
 	}
 	
 	public String toString() {
-		TreeSet<String> collection = mots;
+		TreeSet<String> copy = (TreeSet<String>) mots.clone();
 		String res = "";
-		if(collection.isEmpty())
+		if(copy.isEmpty())
 			return "";
 		for(int i=0 ; i<taille ; i++) {
-			if(collection.isEmpty())
+			if(copy.isEmpty())
 				return res+="";
-			res += collection.first() + "\n";
-			collection.remove(collection.first());
+			res += copy.first() + "\n";
+			copy.remove(copy.first());
 		}
 		return res;
 	}
@@ -73,5 +73,8 @@ public class MLT {
 	public static void main(String[] args) {
 		MLT memoire = new MLT();
 		System.out.println(memoire);
+		System.out.println(memoire.existe("aspirateur"));
+		System.out.println(memoire.existe("dentifrice"));
+		System.out.println(memoire.existe("lit"));
 	}
 }
