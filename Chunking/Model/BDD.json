@@ -1,0 +1,254 @@
+{
+    "type": "table",
+    "database": null,
+    "name": "mots",
+    "withoutRowId": true,
+    "ddl": "CREATE TABLE mots (mots STRING PRIMARY KEY, syllabe1 STRING, syllabe2 STRING, syllabe3 STRING, syllabe4 STRING);",
+    "columns": [
+        {
+            "name": "mots",
+            "type": "STRING",
+            "constraints": [
+                {
+                    "type": "PRIMARY KEY",
+                    "definition": "PRIMARY KEY"
+                }
+            ]
+        },
+        {
+            "name": "syllabe1",
+            "type": "STRING"
+        },
+        {
+            "name": "syllabe2",
+            "type": "STRING"
+        },
+        {
+            "name": "syllabe3",
+            "type": "STRING"
+        },
+        {
+            "name": "syllabe4",
+            "type": "STRING"
+        }
+    ],
+    "rows": [
+        [
+            "accordéon",
+            "a",
+            "ccor",
+            "dé",
+            "on"
+        ],
+        [
+            "calendrier",
+            "ca",
+            "len",
+            "dri",
+            "er"
+        ],
+        [
+            "aspirateur",
+            "as",
+            "pi",
+            "ra",
+            "teur"
+        ],
+        [
+            "caméléon",
+            "ca",
+            "mé",
+            "lé",
+            "on"
+        ],
+        [
+            "crocodile",
+            "cro",
+            "co",
+            "di",
+            "le"
+        ],
+        [
+            "dentifrice",
+            "den",
+            "ti",
+            "fri",
+            "ce"
+        ],
+        [
+            "dinosaure",
+            "di",
+            "no",
+            "sau",
+            "re"
+        ],
+        [
+            "distributeur",
+            "dis",
+            "tri",
+            "bu",
+            "teur"
+        ],
+        [
+            "harmonica",
+            "har",
+            "mo",
+            "ni",
+            "ca"
+        ],
+        [
+            "imprimante",
+            "im",
+            "pri",
+            "man",
+            "te"
+        ],
+        [
+            "épouvantail",
+            "é",
+            "pou",
+            "van",
+            "tail"
+        ],
+        [
+            "macaroni",
+            "ma",
+            "ca",
+            "ro",
+            "ni"
+        ],
+        [
+            "mariage",
+            "ma",
+            "ri",
+            "a",
+            "ge"
+        ],
+        [
+            "médicament",
+            "mé",
+            "di",
+            "ca",
+            "ment"
+        ],
+        [
+            "ordinateur",
+            "or",
+            "di",
+            "na",
+            "teur"
+        ],
+        [
+            "parachute",
+            "pa",
+            "ra",
+            "chu",
+            "te"
+        ],
+        [
+            "photographie",
+            "pho",
+            "to",
+            "gra",
+            "phie"
+        ],
+        [
+            "rhinocéros",
+            "rhi",
+            "no",
+            "cé",
+            "ros"
+        ],
+        [
+            "technologie",
+            "tech",
+            "no",
+            "lo",
+            "gie"
+        ],
+        [
+            "tentacule",
+            "ten",
+            "ta",
+            "cu",
+            "le"
+        ],
+        [
+            "trampoline",
+            "tram",
+            "po",
+            "li",
+            "ne"
+        ],
+        [
+            "ventilateur",
+            "ven",
+            "ti",
+            "la",
+            "teur"
+        ],
+        [
+            "apiculteur",
+            "a",
+            "pi",
+            "cul",
+            "teur"
+        ],
+        [
+            "médecine",
+            "mé",
+            "de",
+            "ci",
+            "ne"
+        ],
+        [
+            "étudiant",
+            "é",
+            "tu",
+            "di",
+            "ant"
+        ],
+        [
+            "ingénieur",
+            "in",
+            "gé",
+            "ni",
+            "eur"
+        ],
+        [
+            "mécanique",
+            "mé",
+            "ca",
+            "ni",
+            "que"
+        ],
+        [
+            "avocate",
+            "a",
+            "vo",
+            "ca",
+            "te"
+        ],
+        [
+            "boulangerie",
+            "bou",
+            "lan",
+            "ge",
+            "rie"
+        ],
+        [
+            "pharmacien",
+            "phar",
+            "ma",
+            "ci",
+            "en"
+        ]
+    ]
+},
+{
+    "type": "index",
+    "database": null,
+    "name": "sqlite_autoindex_mots_1",
+    "unique": false,
+    "ddl": "CREATE INDEX sqlite_autoindex_mots_1 ON mots (mots COLLATE BINARY)"
+}
