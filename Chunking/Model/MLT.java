@@ -28,6 +28,21 @@ public class MLT {
 		mots.add("macaroni");
 		mots.add("ventilateur");
 		mots.add("hippopotame");
+		mots.add("ordinateur");
+		mots.add("télévision");
+		mots.add("motocyclette");
+		mots.add("harmonica");
+		mots.add("accordéon");
+		mots.add("crocodile");
+		mots.add("mariage");
+		mots.add("numérique");
+		mots.add("médicament");
+		mots.add("dinosaure");
+		mots.add("distributeur");
+		mots.add("parachute");
+		mots.add("calendrier");
+		mots.add("trampoline");
+		mots.add("technologie");
 		taille=mots.size();
 	}
 	
@@ -62,19 +77,20 @@ public class MLT {
 		if(copy.isEmpty())
 			return "";
 		for(int i=0 ; i<taille ; i++) {
-			if(copy.isEmpty())
-				return res+="";
-			res += copy.first() + "\n";
+			if(i<taille-1)
+				res += copy.first() + "\n";
+			else
+				res += copy.first();
 			copy.remove(copy.first());
 		}
 		return res;
 	}
 
 	public static void main(String[] args) {
-		MLT memoire = new MLT();
+		/*MLT memoire = new MLT();
 		System.out.println(memoire);
 		System.out.println(memoire.existe("aspirateur"));
 		System.out.println(memoire.existe("dentifrice"));
-		System.out.println(memoire.existe("lit"));
+		System.out.println(memoire.existe("lit"));*/
 	}
 }
