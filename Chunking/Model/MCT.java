@@ -45,6 +45,11 @@ public class MCT {
 		}
 	}
 
+	public void enleve(String s) {
+		activation.remove(s);
+		ordre.remove(s);
+		elementsPresents--;
+	}
 	public HashMap<String, Float> getActivation() {
 		return activation;
 	}
@@ -55,31 +60,32 @@ public class MCT {
 	}
 
 
-
+public void setElementsPresents(int elementsPresents) {
+		this.elementsPresents = elementsPresents;
+	}
 
 public int getElementsPresents() {
 		return elementsPresents;
 	}
 
-public static void main(String[] args) {
-	MCT mct=new MCT();
-	mct.stocker("a");
-	mct.stocker("b");
-	mct.stocker("c");
-	System.out.println(mct.elementsPresents+"ordre "+mct.getOrdre().toString()+" activation "+mct.getActivation().toString());
-	mct.stocker("d");
-	System.out.println(mct.elementsPresents+"ordre "+mct.getOrdre().toString()+" activation "+mct.getActivation().toString());
-	mct.stocker("e");
-	System.out.println(mct.elementsPresents+"ordre "+mct.getOrdre().toString()+" activation "+mct.getActivation().toString());
-	mct.stocker("f");
-	System.out.println(mct.elementsPresents+"ordre "+mct.getOrdre().toString()+" activation "+mct.getActivation().toString());
-	mct.stocker("g");
-	System.out.println(mct.elementsPresents+"ordre "+mct.getOrdre().toString()+" activation "+mct.getActivation().toString());
-	mct.stocker("h");
-	System.out.println(mct.elementsPresents+"ordre "+mct.getOrdre().toString()+" activation "+mct.getActivation().toString());
-	mct.stocker("i");
-	System.out.println(mct.elementsPresents+"ordre "+mct.getOrdre().toString()+" activation "+mct.getActivation().toString());
-	mct.stocker("j");
-	System.out.println(mct.elementsPresents+"ordre "+mct.getOrdre().toString()+" activation "+mct.getActivation().toString());
-}
+	/*
+	 * public static void main(String[] args) { MCT mct=new MCT(); mct.stocker("a");
+	 * mct.stocker("b"); mct.stocker("c");
+	 * System.out.println(mct.elementsPresents+"ordre "+mct.getOrdre().toString()
+	 * +" activation "+mct.getActivation().toString()); mct.stocker("d");
+	 * System.out.println(mct.elementsPresents+"ordre "+mct.getOrdre().toString()
+	 * +" activation "+mct.getActivation().toString()); mct.stocker("e");
+	 * System.out.println(mct.elementsPresents+"ordre "+mct.getOrdre().toString()
+	 * +" activation "+mct.getActivation().toString()); mct.stocker("f");
+	 * System.out.println(mct.elementsPresents+"ordre "+mct.getOrdre().toString()
+	 * +" activation "+mct.getActivation().toString()); mct.stocker("g");
+	 * System.out.println(mct.elementsPresents+"ordre "+mct.getOrdre().toString()
+	 * +" activation "+mct.getActivation().toString()); mct.stocker("h");
+	 * System.out.println(mct.elementsPresents+"ordre "+mct.getOrdre().toString()
+	 * +" activation "+mct.getActivation().toString()); mct.stocker("i");
+	 * System.out.println(mct.elementsPresents+"ordre "+mct.getOrdre().toString()
+	 * +" activation "+mct.getActivation().toString()); mct.stocker("j");
+	 * System.out.println(mct.elementsPresents+"ordre "+mct.getOrdre().toString()
+	 * +" activation "+mct.getActivation().toString()); }
+	 */
 }
