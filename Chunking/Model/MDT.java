@@ -39,6 +39,9 @@ public class MDT {
 		
 		
 	}
+	public MCT getMct() {
+		return mct;
+	}
 	
 	public Map<String, Float> encode(String ch) {
 		int i,j=0;
