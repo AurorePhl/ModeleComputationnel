@@ -14,35 +14,7 @@ public class MLT {
 	public MLT() {
 		mots = new TreeSet<String>();
 		mots.add("dentifrice");
-		mots.add("tentacule");
-		mots.add("rhinocéros");
-		mots.add("imprimante");
-		mots.add("caméléon");
-		mots.add("aspirateur");
-		mots.add("photographie");
-		mots.add("référentiel");
-		mots.add("hélicoptère");
-		mots.add("multicolore");
-		mots.add("vétérinaire");
-		mots.add("escalader");
-		mots.add("macaroni");
-		mots.add("ventilateur");
-		mots.add("hippopotame");
-		mots.add("ordinateur");
-		mots.add("télévision");
-		mots.add("motocyclette");
-		mots.add("harmonica");
-		mots.add("accordéon");
-		mots.add("crocodile");
-		mots.add("mariage");
-		mots.add("numérique");
-		mots.add("médicament");
-		mots.add("dinosaure");
-		mots.add("distributeur");
-		mots.add("parachute");
-		mots.add("calendrier");
-		mots.add("trampoline");
-		mots.add("technologie");
+		
 		taille=mots.size();
 	}
 	
