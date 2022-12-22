@@ -57,7 +57,7 @@ public class MLT {
 	}
 	
 	public String toString() {
-		TreeSet<String> copy = (TreeSet<String>) mots.clone();
+		TreeSet<String> copy = (TreeSet<String>) mots.clone(); 
 		String res = "";
 		if(copy.isEmpty())
 			return "";
