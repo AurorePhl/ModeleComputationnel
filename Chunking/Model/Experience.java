@@ -25,14 +25,12 @@ public class Experience {
 		return "type : "+typePresentation+", taux de réussite : "+String.valueOf(txReussite);
 	}
 
-	public static void main(String[] args) {
-		Experience exp1=new Experience("mots","as-pi-ra-teur-ca-me-le-on");
-		Experience exp2=new Experience("syllabes","pi-as-ra-teur-ca-on-le-me");
-		exp1.passation();
-		exp2.passation();
-		System.out.println("expe1 : "+exp1+", expe2 : "+exp2);
-	}
+	/*
+	 * public static void main(String[] args) { Experience exp1=new
+	 * Experience("mots","as-pi-ra-teur-ca-me-le-on"); Experience exp2=new
+	 * Experience("syllabes","pi-as-ra-teur-ca-on-le-me"); exp1.passation();
+	 * exp2.passation(); System.out.println("expe1 : "+exp1+", expe2 : "+exp2); }
+	 */
 
 }
-
 
