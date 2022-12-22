@@ -22,7 +22,7 @@ public class Experience {
 	}
 	
 	public String toString() {
-		return "type : "+typePresentation+", taux de rÃ©ussite : "+String.valueOf(txReussite);
+		return "type : "+typePresentation+", taux de réussite : "+String.valueOf(txReussite);
 	}
 
 	/*
