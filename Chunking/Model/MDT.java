@@ -28,7 +28,7 @@ public class MDT {
 		
 	
 	public boolean traite(String s1, String s2,String s3, String s) {
-		if (mlt.mlt.contains(s1+s2+s3+s)) {
+		if (mlt.existe(s1+s2+s3+s)) {
 			mct.enleve(s1);
 			mct.enleve(s2);
 			mct.enleve(s3);
