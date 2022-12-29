@@ -21,6 +21,30 @@ public class Experience {
 		txReussite/=mdt.getMct().getActivation().size();
 	}
 	
+	public float getTxReussite() {
+		return txReussite;
+	}
+
+	public void setTxReussite(float txReussite) {
+		this.txReussite = txReussite;
+	}
+
+	public String getTypePresentation() {
+		return typePresentation;
+	}
+
+	public void setTypePresentation(String typePresentation) {
+		this.typePresentation = typePresentation;
+	}
+
+	public String getChPresentee() {
+		return chPresentee;
+	}
+
+	public void setChPresentee(String chPresentee) {
+		this.chPresentee = chPresentee;
+	}
+
 	public String toString() {
 		return "type : "+typePresentation+", taux de réussite : "+String.valueOf(txReussite);
 	}
