@@ -6,12 +6,12 @@ public class Simulation {
 
 	private float txmots, txsyllabes;
 	private int nbsimu, cptSimu;
-	private String ch;
+	private String ch, ordre;
 	private TreeMap<String,Integer> sessions; 
 	private Experience xp;
-	private String ordre;
 	
 	public Simulation(int nbsimu) {
+		/* initialise les attributs et procède à nb simulation(s) de l'expérience */
 		this.nbsimu=nbsimu;
 		txmots=0;
 		txsyllabes=0;
@@ -53,6 +53,10 @@ public class Simulation {
 	}
 	
 	private void initSessions(){
+		/* initialise l'ordre de passation des sessions pour une simulation,
+		 * une TreeMap contenant chaque session en clé associée au numéro de la session,
+		 * la chaine contenant chaque session de la simulation sous la forme : 
+		 * mot:session ou syllabe:session. */
 		sessions = new TreeMap<String,Integer>();
 		ch="";
 		ordre="";
@@ -60,25 +64,25 @@ public class Simulation {
 			int numSession = 1+ (int) (Math.random() * 4);
 			if(!(sessions.containsValue(numSession))) {
 				if(numSession==1) {
-					sessions.put("mot:as-pi-ra-teur-ca-mé-lé-on", numSession);
+					sessions.put("as-pi-ra-teur-ca-mé-lé-on", numSession);
 					ch+="mot:as-pi-ra-teur-ca-mé-lé-on ";
 					i++;
 					ordre+=1;
 				}
 				else if(numSession==2) {
-					sessions.put("mot:rhi-no-cé-ros-im-pri-man-te", numSession);
+					sessions.put("rhi-no-cé-ros-im-pri-man-te", numSession);
 					ch+="mot:rhi-no-cé-ros-im-pri-man-te ";
 					i++;
 					ordre+=2;
 				}
 				else if(numSession==3) {
-					sessions.put("syllabe:ce-le-ta-cu-ti-den-fri-ten", numSession);
+					sessions.put("ce-le-ta-cu-ti-den-fri-ten", numSession);
 					ch+="syllabe:ce-le-ta-cu-ti-den-fri-ten ";
 					i++;
 					ordre+=3;
 				}
 				else {
-					sessions.put("syllabe:fé-tiel-to-phie-ré-gra-ren-pho", numSession);
+					sessions.put("fé-tiel-to-phie-ré-gra-ren-pho", numSession);
 					ch+="syllabe:fé-tiel-to-phie-ré-gra-ren-pho ";
 					i++;
 					ordre+=4;
@@ -88,24 +92,34 @@ public class Simulation {
 		}
 	}
 	
+	private int calculPourcentage(float value) {
+		float res = value*100;
+		if(res%10<5)
+			return (int)(res);
+		return ((int) (res))+1;
+		
+	}
+	
 	public String toString() {
-		// montre les tx de réussite par condition
-		return xp.toString();
+		/* retourne les tx de réussite pour chaque session */
+		return "session : "+sessions.get(xp.getChPresentee())+", "+xp.toString()+" soit "+calculPourcentage(xp.getTxReussite())+"%";
 	}
 	
 	private String preToString() {
-		/*indique le numéro de la simulation 
-		 * et l'ordre de passation des sessions pour chaque simulation*/
+		/* retourne le numéro de la simulation 
+		 * et l'ordre de passation des sessions pour chaque simulation */
 		return "Simulation "+String.valueOf(cptSimu+1)+" :\nordre de passation : "+ordre;
 	}
 	
 	private String finToString() {
-		/*indique les moyennes de taux de réussites et la moyenne totale*/
+		/*retourne les moyennes de taux de réussites pour les sessions sans chunking et avec chunking,
+		 * ainsi que la moyenne totale de tous les taux de réussites */
 		float averageTxmots = txmots/(nbsimu*2);
 		float averageTxsyllabes = txsyllabes/(nbsimu*2);
-		return "Moyennes des taux :\ntype : mots, moyenne des taux de réussite : "+String.valueOf(averageTxmots)
-		+"\ntype : syllabes, moyenne des taux de réussite : "+String.valueOf(averageTxsyllabes)
-		+"\nmoyenne totales des taux de réussite : "+String.valueOf((averageTxmots+averageTxsyllabes)/2);
+		float averageTotal = (averageTxmots+averageTxsyllabes)/2;
+		return "Moyennes des taux :\ntype : mots, taux de réussite moyen : "+calculPourcentage(averageTxmots)+"% ("+String.valueOf(averageTxmots)+")"
+		+"\ntype : syllabes, taux de réussite moyen : "+calculPourcentage(averageTxsyllabes)+"% ("+String.valueOf(averageTxsyllabes)+")"
+		+"\ntaux de réussite moyen tous types confondus : "+calculPourcentage(averageTotal)+"% ("+String.valueOf(averageTotal)+")";
 	}
 	
 	public static void main(String[] args) {
