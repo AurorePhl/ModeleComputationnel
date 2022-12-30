@@ -1,6 +1,6 @@
 package Model;
 
-import java.util.HashMap;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class Simulation {
@@ -8,7 +8,7 @@ public class Simulation {
 	private float txmots, txsyllabes;
 	private int nbsimu;
 	private String ch;
-	private HashMap<String,Integer> sessions; 
+	private TreeMap<String,Integer> sessions; 
 	private Experience xp;
 	
 	public Simulation(int nbsimu) {
@@ -18,66 +18,69 @@ public class Simulation {
 		}
 		for(int nb=0;nb<nbsimu;nb++) {
 			initSessions();
-			ch=sessions.toString();
-			for(int i=0;i<sessions.size();i++) {
-				if(ch.substring(i,i+4).equals("mots")) {
-					
-					xp = new Experience(ch.substring(i,i+4),ch.substring(i));
+			int j=0;
+			for(;j<ch.length();) {
+				if(ch.substring(j,j+4).equals("mot:")) {
+					String chPresentee = "";
+					int cpt=j+4;
+					for(;ch.charAt(cpt)!=' ';cpt++) {
+						chPresentee+=ch.charAt(cpt);
+					}
+					System.out.println(chPresentee);
+					xp = new Experience(ch.substring(j,j+3),chPresentee);
 					xp.passation();
+					System.out.println(toString());
+					j=cpt+1;
 				}
-				if(ch.substring(i,i+8).equals("syllabes")) {
-					
-				}
-			}
-		}
-	}
-	
-	public Simulation(String ch, int nbsimu){
-		// constructeur, ch l’ensemble des chaînes présentées séparées par MOTS ou SYLLABES
-		this.ch=ch;
-		this.nbsimu=nbsimu;
-		if(nbsimu<0) {
-			throw new IllegalArgumentException("nbsimu<0 ou chaine non conforme");
-		}
-		for(int nb=0;nb<nbsimu;nb++) {
-			initSessions();
-			for(int i=0;i<ch.length();i++) {
-				if(ch.substring(i,i+4).equals("mots")) {
-					
-					xp = new Experience(ch.substring(i,i+4),ch.substring(i));
+				if(ch.substring(j,j+8).equals("syllabe:")) {
+					String chPresentee = "";
+					int cpt=j+8;
+					for(;ch.charAt(cpt)!=' ';cpt++) {
+						chPresentee+=ch.charAt(cpt);
+					}
+					System.out.println(chPresentee);
+					xp = new Experience(ch.substring(j,j+7),chPresentee);
 					xp.passation();
-				}
-				if(ch.substring(i,i+8).equals("syllabes")) {
-					
+					System.out.println(toString());
+					j=cpt+1;
 				}
 			}
 		}
 	}
 	
 	private void initSessions(){
-		sessions = new HashMap<String,Integer>();
-		TreeSet<Integer> cpt = new TreeSet<Integer>();
+		sessions = new TreeMap<String,Integer>();
+		ch="";
 		for(int i=0;i<4;) {
 			int numSession = 1+ (int) (Math.random() * 4);
-			if(sessions.containsValue(numSession)) {
-				if(cpt.contains(numSession))
+			if(!(sessions.containsValue(numSession))) {
+				if(numSession==1) {
+					sessions.put("mot:as-pi-ra-teur, mot:ca-mé-lé-on", numSession);
+					ch+="mot:as-pi-ra-teur mot:ca-mé-lé-on ";
 					i++;
-				else
-					cpt.add(numSession);
-			}
-			else {
-				if(numSession==1)
-					sessions.put("mot:as-pi-ra-teur;mot:ca-mé-lé-on", numSession);
-				else if(numSession==2)
-					sessions.put("mot:rhi-no-cé-ros;mot:im-pri-man-te", numSession);
-				else if(numSession==3)
-					sessions.put("syllabe:ce-le-ta-cu;syllabe:ti-den-fri-ten", numSession);
-				else
-					sessions.put("syllabe:fé-tiel-to-phie;syllabe:ré-gra-ren-pho", numSession);
+					System.out.println("ajout de 1");
+				}
+				else if(numSession==2) {
+					sessions.put("mot:rhi-no-cé-ros, mot:im-pri-man-te", numSession);
+					ch+="mot:rhi-no-cé-ros mot:im-pri-man-te ";
+					i++;
+					System.out.println("ajout de 2");
+				}
+				else if(numSession==3) {
+					sessions.put("syllabe:ce-le-ta-cu, syllabe:ti-den-fri-ten", numSession);
+					ch+="syllabe:ce-le-ta-cu syllabe:ti-den-fri-ten ";
+					i++;
+					System.out.println("ajout de 3");
+				}
+				else {
+					sessions.put("syllabe:fé-tiel-to-phie, syllabe:ré-gra-ren-pho", numSession);
+					ch+="syllabe:fé-tiel-to-phie syllabe:ré-gra-ren-pho ";
+					i++;
+					System.out.println("ajout de 4");
+				}
 			}
 			
 		}
-		System.out.println(sessions.toString());
 	}
 	
 	public String toString() {
@@ -86,7 +89,7 @@ public class Simulation {
 	}
 	
 	public static void main(String[] args) {
-		Simulation s1 = new Simulation("",2);
+		Simulation test = new Simulation(1);
 	}
 	
 }
