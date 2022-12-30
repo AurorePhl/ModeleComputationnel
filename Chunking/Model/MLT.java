@@ -12,7 +12,7 @@ public class MLT {
 		/* initialisation des mots communs contenus dans la base de données 
 		 * et mise à jour de la taille de la collection. */
 		this("accordéon");
-		mots.add("calendrier");
+		mots.add("appartement");
 		mots.add("aspirateur");
 		mots.add("caméléon");
 		mots.add("crocodile");
@@ -23,24 +23,24 @@ public class MLT {
 		mots.add("imprimante");
 		mots.add("épouvantail");
 		mots.add("macaroni");
-		mots.add("mariage");
+		mots.add("signature");
 		mots.add("médicament");
 		mots.add("ordinateur");
 		mots.add("parachute");
 		mots.add("photographie");
 		mots.add("rhinocéros");
-		mots.add("technologie");
+		mots.add("libellule");
 		mots.add("tentacule");
 		mots.add("trampoline");
 		mots.add("ventilateur");
 		mots.add("apiculteur");
 		mots.add("médecine");
-		mots.add("étudiant");
-		mots.add("ingénieur");
+		mots.add("charcuterie");
+		mots.add("ingénieurie");
 		mots.add("mécanique");
-		mots.add("avocate");
+		mots.add("thermomètre");
 		mots.add("boulangerie");
-		mots.add("pharmacien");
+		mots.add("référentiel");
 		taille = mots.size();
 	}
 
