@@ -9,38 +9,38 @@ public class MLT {
 	private int taille;
 
 	public MLT() {
-		/* initialisation des mots communs contenus dans la base de données 
-		 * et mise à jour de la taille de la collection. */
-		this("accordéon");
+		/* initialisation des mots communs contenus dans la base de donnÃ©es 
+		 * et mise Ã  jour de la taille de la collection. */
+		this("accordÃ©on");
 		mots.add("appartement");
 		mots.add("aspirateur");
-		mots.add("caméléon");
+		mots.add("camÃ©lÃ©on");
 		mots.add("crocodile");
 		mots.add("dentifrice");
 		mots.add("dinosaure");
 		mots.add("distributeur");
 		mots.add("harmonica");
 		mots.add("imprimante");
-		mots.add("épouvantail");
+		mots.add("Ã©pouvantail");
 		mots.add("macaroni");
 		mots.add("signature");
-		mots.add("médicament");
+		mots.add("mÃ©dicament");
 		mots.add("ordinateur");
 		mots.add("parachute");
 		mots.add("photographie");
-		mots.add("rhinocéros");
+		mots.add("rhinocÃ©ros");
 		mots.add("libellule");
 		mots.add("tentacule");
 		mots.add("trampoline");
 		mots.add("ventilateur");
 		mots.add("apiculteur");
-		mots.add("médecine");
+		mots.add("mÃ©decine");
 		mots.add("charcuterie");
-		mots.add("ingénieurie");
-		mots.add("mécanique");
-		mots.add("thermomètre");
+		mots.add("ingÃ©nierie");
+		mots.add("mÃ©canique");
+		mots.add("thermomÃ¨tre");
 		mots.add("boulangerie");
-		mots.add("référentiel");
+		mots.add("rÃ©fÃ©rentiel");
 		taille = mots.size();
 	}
 
@@ -70,7 +70,7 @@ public class MLT {
 	}
 
 	public String toString() {
-		// retourne une chaîne de caractère contenant les mots sous forme de liste verticale
+		// retourne une chaÃ®ne de caractÃ¨re contenant les mots sous forme de liste verticale
 		TreeSet<String> copy = (TreeSet<String>) mots.clone(); 
 		String res = "";
 		if(copy.isEmpty())
@@ -85,7 +85,7 @@ public class MLT {
 		return res;
 	}
 
-	// test des méthodes 
+	// test des mÃ©thodes 
 	/*public static void main(String[] args) {
 		MLT memoire = new MLT();
 		// test de toString()
