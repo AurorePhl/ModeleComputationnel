@@ -11,12 +11,12 @@ public class Simulation {
 	private Experience xp;
 	
 	public Simulation(int nbsimu) {
-		/* initialise les attributs et procède à nb simulation(s) de l'expérience */
+		/* initialise les attributs et procÃ¨de Ã  nb simulation(s) de l'expÃ©rience */
 		this.nbsimu=nbsimu;
 		txmots=0;
 		txsyllabes=0;
 		if(nbsimu<0) {
-			throw new IllegalArgumentException("nbsimu<0 ou chaine non conforme");
+			throw new IllegalArgumentException("nbsimu<0");
 		}
 		for(cptSimu=0;cptSimu<nbsimu;cptSimu++) {
 			initSessions();
@@ -54,8 +54,8 @@ public class Simulation {
 	
 	private void initSessions(){
 		/* initialise l'ordre de passation des sessions pour une simulation,
-		 * une TreeMap contenant chaque session en clé associée au numéro de la session,
-		 * la chaine contenant chaque session de la simulation sous la forme : 
+		 * une TreeMap contenant chaque session en clÃ© associÃ©e au numÃ©ro de la session,
+		 * la chaÃ®ne contenant chaque session de la simulation sous la forme : 
 		 * mot:session ou syllabe:session. */
 		sessions = new TreeMap<String,Integer>();
 		ch="";
@@ -64,14 +64,14 @@ public class Simulation {
 			int numSession = 1+ (int) (Math.random() * 4);
 			if(!(sessions.containsValue(numSession))) {
 				if(numSession==1) {
-					sessions.put("as-pi-ra-teur-ca-mé-lé-on", numSession);
-					ch+="mot:as-pi-ra-teur-ca-mé-lé-on ";
+					sessions.put("as-pi-ra-teur-ca-mÃ©-lÃ©-on", numSession);
+					ch+="mot:as-pi-ra-teur-ca-mÃ©-lÃ©-on ";
 					i++;
 					ordre+=1;
 				}
 				else if(numSession==2) {
-					sessions.put("rhi-no-cé-ros-im-pri-man-te", numSession);
-					ch+="mot:rhi-no-cé-ros-im-pri-man-te ";
+					sessions.put("rhi-no-cÃ©-ros-im-pri-man-te", numSession);
+					ch+="mot:rhi-no-cÃ©-ros-im-pri-man-te ";
 					i++;
 					ordre+=2;
 				}
@@ -82,8 +82,8 @@ public class Simulation {
 					ordre+=3;
 				}
 				else {
-					sessions.put("fé-tiel-to-phie-ré-gra-ren-pho", numSession);
-					ch+="syllabe:fé-tiel-to-phie-ré-gra-ren-pho ";
+					sessions.put("fÃ©-tiel-to-phie-rÃ©-gra-ren-pho", numSession);
+					ch+="syllabe:fÃ©-tiel-to-phie-rÃ©-gra-ren-pho ";
 					i++;
 					ordre+=4;
 				}
@@ -101,25 +101,25 @@ public class Simulation {
 	}
 	
 	public String toString() {
-		/* retourne les tx de réussite pour chaque session */
+		/* retourne les taux de rÃ©ussite pour chaque session */
 		return "session : "+sessions.get(xp.getChPresentee())+", "+xp.toString()+" soit "+calculPourcentage(xp.getTxReussite())+"%";
 	}
 	
 	private String preToString() {
-		/* retourne le numéro de la simulation 
+		/* retourne le numÃ©ro de la simulation 
 		 * et l'ordre de passation des sessions pour chaque simulation */
 		return "Simulation "+String.valueOf(cptSimu+1)+" :\nordre de passation : "+ordre;
 	}
 	
 	private String finToString() {
-		/*retourne les moyennes de taux de réussites pour les sessions sans chunking et avec chunking,
-		 * ainsi que la moyenne totale de tous les taux de réussites */
+		/* retourne les moyennes de taux de rÃ©ussite pour les sessions sans chunking et avec chunking,
+		 * ainsi que la moyenne totale de tous les taux de rÃ©ussite */
 		float averageTxmots = txmots/(nbsimu*2);
 		float averageTxsyllabes = txsyllabes/(nbsimu*2);
 		float averageTotal = (averageTxmots+averageTxsyllabes)/2;
-		return "Moyennes des taux :\ntype : mots, taux de réussite moyen : "+calculPourcentage(averageTxmots)+"% ("+String.valueOf(averageTxmots)+")"
-		+"\ntype : syllabes, taux de réussite moyen : "+calculPourcentage(averageTxsyllabes)+"% ("+String.valueOf(averageTxsyllabes)+")"
-		+"\ntaux de réussite moyen tous types confondus : "+calculPourcentage(averageTotal)+"% ("+String.valueOf(averageTotal)+")";
+		return "Moyennes des taux :\ntype : mots, taux de rÃ©ussite moyen : "+calculPourcentage(averageTxmots)+"% ("+String.valueOf(averageTxmots)+")"
+		+"\ntype : syllabes, taux de rÃ©ussite moyen : "+calculPourcentage(averageTxsyllabes)+"% ("+String.valueOf(averageTxsyllabes)+")"
+		+"\ntaux de rÃ©ussite moyen tout type confondu : "+calculPourcentage(averageTotal)+"% ("+String.valueOf(averageTotal)+")";
 	}
 	
 	public static void main(String[] args) {
